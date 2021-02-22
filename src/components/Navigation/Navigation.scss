@@ -1,0 +1,9 @@
+@import '../../assets/css/variables';
+
+.navbar {
+    background: $navbar;
+    padding: 1em 2em;
+    .navbar-toggler-icon {
+        display: inline-block;
+    }
+}
