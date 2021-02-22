@@ -1,6 +1,6 @@
-# Getting Started with Create React App
+# Školská databáza kníh
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Frontend of the school database of books - SOŠ technická Humenné. This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
 
@@ -68,3 +68,9 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `yarn build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+### Meta
+
+Kristián Valčo – [@kristianvalco](https://twitter.com/kristianvalco)
+
+Kristián Veľas – [@kristianvelas](https://www.facebook.com/be.vlsxx)
