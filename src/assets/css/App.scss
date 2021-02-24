@@ -7,24 +7,23 @@
 }
 
 #sidebar {
-    width: 250px;
+    width: 300px;
     position: fixed;
     top: 0;
     left: 0;
     height: 100vh;
     z-index: 999;
+    transition: all 0.4s ease-in-out;
     background: $navbar;
-    transition: all 0.3s;
     &.active {
-        margin-left: -250px;
+        margin-left: -300px;
     }
-    background: $navbar;
 }
 
 #content {
-    width: calc(100% - 250px);
+    width: calc(100% - 300px);
     min-height: 100vh;
-    transition: all 0.3s;
+    transition: all 0.4s ease-in-out;
     position: absolute;
     top: 0;
     right: 0;
@@ -32,6 +31,6 @@
         width: 100%;
     }
     .main {
-        padding: 2em;
+        padding: 8rem 3rem;
     }
 }

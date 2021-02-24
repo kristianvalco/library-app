@@ -3,6 +3,8 @@
 .navbar {
     background: $navbar;
     padding: 0.8em;
+    position: fixed;
+    width: 100%;
     .close-btn {
         border: 0;
         background: none;

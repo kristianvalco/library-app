@@ -18,10 +18,10 @@ const Sidebar = (props) => {
 
             <ul className="side-navbar">
                 <li className="side-navbar-item">
-                    <NavLink to="/" exact>Home</NavLink>
+                    <NavLink to="/" exact><i className="fa fa-home" />Home</NavLink>
                 </li>
                 <li className="side-navbar-item">
-                    <NavLink to="/contact">Contact</NavLink>
+                    <NavLink to="/contact"><i className="fa fa-phone" />Contact</NavLink>
                 </li>
             </ul>
         </nav>

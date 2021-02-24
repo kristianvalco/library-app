@@ -9,23 +9,32 @@
 }
 
 .side-navbar {
-    margin-left: -1em;
-    margin-right: 1em;
+    padding: 0;
     list-style: none;
-    overflow: hidden;
+    overflow-x: hidden;
     .side-navbar-item {
-        padding: 1em 0em;
-        transition: all 0.2s ease-in-out;
-        border-radius: 0.3em;
+        width: inherit;
         &:hover {
             color: $white;
-            background: #bfdffd;
         }
         a {
-            color: $black;
+            display: flex;
+            flex: 1 1;
+            align-items: center;
+            padding: .8445rem 3rem;
+            white-space: nowrap;
+            color: #a8a8a8;
             text-decoration: none;
-            padding: 1.2em 0em 1.2em 2em;
-            padding-right: 100%;
+            transition: all 0.2s ease-in-out;
+            font-weight: 500;
+            &.active, &:hover {
+                color: $primary;
+                // background: $secondary;
+                border-right: 3px solid $primary;
+            }
+            i {
+                padding-right: 1em;
+            }
         }
     }
 }
