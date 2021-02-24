@@ -14,11 +14,11 @@
     height: 100vh;
     z-index: 999;
     background: $navbar;
-    color: $black;
     transition: all 0.3s;
     &.active {
         margin-left: -250px;
     }
+    background: $navbar;
 }
 
 #content {

@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React from 'react'
 import { Link, NavLink } from "react-router-dom";
 import logo from '../../assets/img/sosthe-logo.svg'
 
@@ -7,12 +7,13 @@ import './Sidebar.scss'
 
 const Sidebar = (props) => {
 
+    // sidebar active class
     const { handle } = props
  
     return (
         <nav id="sidebar" className={`${handle ? "" : "active"}`}>
             <div className="sidebar-header">
-                <Link to="/"><img src={logo} alt="" className="sidebarLogo" /></Link>
+                <Link to="/" className="sidebarLogo"><img src={logo} alt="" /></Link>
             </div>
 
             <ul className="side-navbar">

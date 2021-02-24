@@ -1,27 +1,31 @@
 @import '../../assets/css/variables';
 
 .sidebarLogo {
-    width: 8em;
     display: flex;
     justify-items: center;
     margin: auto;
-    padding: 3em 0;
+    width: 8em;
+    padding: 2em 0;
 }
 
 .side-navbar {
+    margin-left: -1em;
+    margin-right: 1em;
     list-style: none;
+    overflow: hidden;
     .side-navbar-item {
-        padding-bottom: 1em;
-        &:last-child {
-            padding-bottom: 0;
+        padding: 1em 0em;
+        transition: all 0.2s ease-in-out;
+        border-radius: 0.3em;
+        &:hover {
+            color: $white;
+            background: #bfdffd;
         }
         a {
-            color: #747474;
+            color: $black;
             text-decoration: none;
-            transition: color 0.2s ease-in-out;
-            &.active, &:hover {
-                color: $black;
-            }
+            padding: 1.2em 0em 1.2em 2em;
+            padding-right: 100%;
         }
     }
 }

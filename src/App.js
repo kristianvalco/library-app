@@ -14,8 +14,10 @@ import Contact from './views/Contact'
 
 function App() {
 
+    // is sidebar active? false
     const [isActive, setActive] = useState("false");
 
+    // close sidebar
     const handleToggle = () => {
         setActive(!isActive);
     };
@@ -27,7 +29,7 @@ function App() {
                 <Navigation handle={handleToggle} />
                 <div className="main">
                     <Switch>
-                        <Route path="/"><Home /></Route>
+                        <Route path="/" exact><Home /></Route>
                         <Route path="/contact"><Contact /></Route>
                     </Switch>
                 </div>

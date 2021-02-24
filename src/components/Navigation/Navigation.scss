@@ -2,5 +2,10 @@
 
 .navbar {
     background: $navbar;
-    padding: 1em;
+    padding: 0.8em;
+    .close-btn {
+        border: 0;
+        background: none;
+        font-size: 1.4em;
+    }
 }
