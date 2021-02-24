@@ -1,22 +1,18 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
 
 import './Navigation.scss'
 
-const Navigation = () => {
+const Navigation = (props) => {
+
+    const { handle } = props
+
     return (
         <nav className="navbar navbar-expand-lg">
             <div className="container-fluid">
-                <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <span className="navbar-toggler-icon"></span>
+                <button onClick={handle} type="button" id="sidebarCollapse" className="btn btn-info ms-auto">
+                    <i className="fas fa-align-left"></i>
+                    <span>Toggle Sidebar</span>
                 </button>
-                <div className="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
-                        <li className="nav-item">
-                            <Link to="/">Kristian Valco</Link>
-                        </li>
-                    </ul>
-                </div>
             </div>
         </nav>
     )

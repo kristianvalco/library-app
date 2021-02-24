@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { Switch, Route } from "react-router-dom";
 
 // CSS
@@ -9,17 +10,24 @@ import Navigation from './components/Navigation/Navigation'
 
 // views
 import Home from "./views/Home";
+import Contact from './views/Contact'
 
 function App() {
+
+    const [isActive, setActive] = useState("false");
+
+    const handleToggle = () => {
+        setActive(!isActive);
+    };
+
     return (
         <div className="wrapper">
-            <div className="sidebar">
-                <Sidebar />
-            </div>
+            <Sidebar handle={isActive} />
             <div className="main">
-                <Navigation />
+                <Navigation handle={handleToggle} />
                 <Switch>
                     <Route path="/"><Home /></Route>
+                    <Route path="/"><Contact /></Route>
                 </Switch>
             </div>
         </div>
