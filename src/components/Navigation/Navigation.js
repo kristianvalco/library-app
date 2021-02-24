@@ -9,7 +9,7 @@ const Navigation = (props) => {
     return (
         <nav className="navbar navbar-expand-lg">
             <div className="container-fluid">
-                <button onClick={handle} type="button" id="sidebarCollapse" className="btn btn-info ms-auto">
+                <button onClick={handle} type="button" className="btn btn-info">
                     <i className="fas fa-align-left"></i>
                     <span>Toggle Sidebar</span>
                 </button>

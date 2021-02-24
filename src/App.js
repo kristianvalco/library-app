@@ -23,12 +23,14 @@ function App() {
     return (
         <div className="wrapper">
             <Sidebar handle={isActive} />
-            <div className="main">
+            <div id="content" className={`${isActive ? "" : "active"}`}>
                 <Navigation handle={handleToggle} />
-                <Switch>
-                    <Route path="/"><Home /></Route>
-                    <Route path="/"><Contact /></Route>
-                </Switch>
+                <div className="main">
+                    <Switch>
+                        <Route path="/"><Home /></Route>
+                        <Route path="/contact"><Contact /></Route>
+                    </Switch>
+                </div>
             </div>
         </div>
     );
