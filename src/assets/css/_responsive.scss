@@ -3,6 +3,12 @@
         margin-left: -250px;
     }
     #sidebar.active {
-        margin-left: 0;
+        margin-left: 0 !important;
+    }
+    #content{
+        width: 100% !important;
+        &.active {
+            width: calc(100% - 250px) !important;
+        }
     }
 }
