@@ -3,6 +3,9 @@ import { withRouter, Redirect } from "react-router";
 import app from '../base';
 import { AuthContext } from '../Auth';
 
+// CSS
+import './Login.scss'
+
 const Login = ({ history }) => {
     const handleLogin = useCallback(async event => {
         event.preventDefault();
@@ -24,7 +27,7 @@ const Login = ({ history }) => {
     }
 
     return (
-        <div>
+        <div className="login">
             <h1>Log in</h1>
             <form onSubmit={handleLogin}>
                 <label>
