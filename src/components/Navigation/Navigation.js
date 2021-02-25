@@ -12,7 +12,7 @@ const Navigation = (props) => {
     return (
         <nav className="navbar navbar-expand-lg">
             <div className="container-fluid">
-                <button onClick={handle} type="button" className="close-btn"><img src={menuIcon} /></button>
+                <button onClick={handle} type="button" className="close-btn"><img src={menuIcon} alt="" /></button>
             </div>
         </nav>
     )

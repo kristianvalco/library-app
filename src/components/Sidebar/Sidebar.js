@@ -14,10 +14,10 @@ const Sidebar = (props) => {
     return (
         <nav id="sidebar" className={`${handle ? "" : "active"}`}>
             <div className="sidebar-header">
-                <Link to="/" className="sidebarLogo"><img src={logo} /></Link>
+                <Link to="/" className="sidebarLogo"><img src={logo} alt="" /></Link>
             </div>
 
-            <button className="btn btn-primary addNew shadow-none">Pridať záznam <img src={plusIcon} /></button>
+            <button className="btn btn-primary addNew shadow-none">Pridať záznam <img src={plusIcon} alt="" /></button>
 
             <ul className="side-navbar">
                 <li className="side-navbar-item">
