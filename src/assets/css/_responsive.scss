@@ -1,6 +1,6 @@
 @media (max-width: 768px) {
     #sidebar {
-        margin-left: -250px;
+        margin-left: -300px;
     }
     #sidebar.active {
         margin-left: 0 !important;
@@ -8,7 +8,7 @@
     #content{
         width: 100% !important;
         &.active {
-            width: calc(100% - 250px) !important;
+            width: calc(100% - 300px) !important;
         }
     }
 }

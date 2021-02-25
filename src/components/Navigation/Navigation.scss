@@ -2,12 +2,12 @@
 
 .navbar {
     background: $navbar;
-    padding: 0.8em;
+    padding: 1.5em 1em;
     position: fixed;
     width: 100%;
     .close-btn {
         border: 0;
         background: none;
-        font-size: 1.4em;
+        width: 2.5em;
     }
 }

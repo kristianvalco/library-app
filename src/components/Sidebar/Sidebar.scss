@@ -4,11 +4,12 @@
     display: flex;
     justify-items: center;
     margin: auto;
-    width: 8em;
-    padding: 2em 0;
+    width: 5em;
+    padding: 3em 0;
 }
 
 .side-navbar {
+    margin-top: 2em;
     padding: 0;
     list-style: none;
     overflow-x: hidden;
@@ -23,18 +24,36 @@
             align-items: center;
             padding: .8445rem 3rem;
             white-space: nowrap;
-            color: #a8a8a8;
+            color: #a0a5bc;
             text-decoration: none;
             transition: all 0.2s ease-in-out;
             font-weight: 500;
             &.active, &:hover {
-                color: $primary;
+                color: $black;
                 // background: $secondary;
-                border-right: 3px solid $primary;
             }
             i {
                 padding-right: 1em;
             }
+        }
+    }
+}
+
+#sidebar {
+    .addNew {
+        background: $primary;
+        border: $primary;
+        color: $white;
+        font-weight: 500;
+        display: flex;
+        justify-items: center;
+        margin: auto;
+        padding: 1em 2em 1em 2em;
+        border-radius: 0.6em;
+        img {
+            width: 1em;
+            margin: auto;
+            margin-left: 1em;
         }
     }
 }
