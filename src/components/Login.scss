@@ -1,3 +1,30 @@
-#sidebar .login {
-    display: none;
+@import '../assets/css/variables';
+
+.login {
+    margin-top: 15em;
+}
+
+.login form {
+    background: $navbar;
+    padding: 4em;
+    width: 40em;
+    margin: auto;
+    border-radius: 0.6em;
+    img {
+        width: 6em;
+        margin: 0 auto 3em auto;
+    }
+    .form-control {
+        padding: 1.5em;
+        border: 0;
+        border-radius: 0.4em;
+        background: $white;
+        margin-top: 1.5em;
+        &:first-child {
+            margin-top: 0;
+        }
+    }
+    .btn {
+        margin-top: 3em;
+    }
 }
