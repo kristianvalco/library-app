@@ -2,12 +2,44 @@
 
 .navbar {
     background: $navbar;
-    padding: 1.5em 1em;
+    padding: 1em 2em;
     position: fixed;
-    width: 100%;
+    width: calc(100% - 300px);
     .close-btn {
         border: 0;
         background: none;
         width: 2.5em;
+        fill: $black;
+        transition: $transition;
+        &:hover {
+            fill: $primary;
+        }
+    }
+    .navbar-nav {
+        margin-left: auto;
+        a {
+            cursor: pointer;
+        }
+        .avatar {
+            color: $black;
+            font-weight: 500;
+            &:hover, &:focus, &:active {
+                color: $primary;
+            }
+            img {
+                width: 2.5em;
+                border-radius: 50%;
+                margin-right: 0.8em;
+            }
+        }
+        .dropdown-toggle::after {
+            margin-left: 0.8em;
+        }
+    }
+}
+
+#content.active {
+    .navbar {
+        width: 100%;
     }
 }
