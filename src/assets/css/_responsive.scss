@@ -11,4 +11,12 @@
             width: calc(100% - 300px) !important;
         }
     }
+    .navbar {
+        width: 100% !important;
+    }
+    #content.active {
+        .navbar {
+            width: calc(100% - 300px) !important;
+        }
+    }
 }

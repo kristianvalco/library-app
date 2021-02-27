@@ -15,14 +15,13 @@
     overflow-x: hidden;
     .side-navbar-item {
         width: inherit;
+        transition: all 0.2s ease-in-out;
         &:hover {
             color: $white;
         }
         a {
-            display: flex;
-            flex: 1 1;
-            align-items: center;
-            padding: .8445rem 3rem;
+            display: inline-block;
+            padding: 1.2rem 3rem;
             white-space: nowrap;
             color: #a0a5bc;
             text-decoration: none;
@@ -30,30 +29,25 @@
             font-weight: 500;
             &.active, &:hover {
                 color: $black;
-                // background: $secondary;
+                svg {
+                    fill: $black;
+                }
             }
-            i {
-                padding-right: 1em;
+            svg {
+                transition: all 0.2s ease-in-out;
+                margin: 0 1.2em 0.3em 0;
+                width: 1em;
+                fill: #a0a5bc;
             }
         }
     }
 }
 
 #sidebar {
-    .addNew {
-        background: $primary;
-        border: $primary;
-        color: $white;
-        font-weight: 500;
-        display: flex;
-        justify-items: center;
+    .addNew svg {
+        width: 1em;
         margin: auto;
-        padding: 1em 2em 1em 2em;
-        border-radius: 0.6em;
-        img {
-            width: 1em;
-            margin: auto;
-            margin-left: 1em;
-        }
+        margin-right: 1em;
+        fill: $white;
     }
 }
