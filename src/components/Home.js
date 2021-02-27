@@ -11,7 +11,6 @@ import Dashboard from '../views/Dashboard'
 import Contact from '../views/Contact'
 import Settings from '../views/Settings'
 
-
 const Home = () => {
 
     // is sidebar active? false

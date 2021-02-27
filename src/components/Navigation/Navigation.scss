@@ -1,8 +1,11 @@
 @import '../../assets/css/variables';
 
 .navbar {
+    -webkit-box-shadow: 0px 0px 35px 0px rgba(0,0,0,0.08);
+    -moz-box-shadow: 0px 0px 35px 0px rgba(0,0,0,0.08);
+    box-shadow: 0px 0px 35px 0px rgba(0,0,0,0.08);
     background: $navbar;
-    padding: 1em 2em;
+    padding: 1em 3em 1em 1em;
     position: fixed;
     width: calc(100% - 300px);
     .close-btn {

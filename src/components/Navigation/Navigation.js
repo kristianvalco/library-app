@@ -12,6 +12,7 @@ const Navigation = (props) => {
 
     // close sidebar
     const { handle } = props
+    
     var user = firebase.auth().currentUser;
     var name, email, photoUrl, uid, emailVerified;
     

@@ -17,7 +17,7 @@ const Settings = () => {
     }
 
     return (
-        <div>
+        <div className="settings animate__animated animate__zoomIn">
             <h1>Nastavenia</h1>
             <form onSubmit={handleSubmit}>
                 <input autoFocus id="name" type="text" onChange={handleInput} />

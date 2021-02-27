@@ -5,6 +5,9 @@
 }
 
 .login form {
+    -webkit-box-shadow: 0px 0px 35px 0px rgba(0,0,0,0.08);
+    -moz-box-shadow: 0px 0px 35px 0px rgba(0,0,0,0.08);
+    box-shadow: 0px 0px 35px 0px rgba(0,0,0,0.08);
     background: $navbar;
     padding: 4em;
     width: 40em;
