@@ -6,8 +6,10 @@ import Sidebar from './Sidebar/Sidebar'
 import Navigation from './Navigation/Navigation'
 import { Switch, Route } from 'react-router-dom';
 
-import Contact from '../views/Contact'
+// views
 import Dashboard from '../views/Dashboard'
+import Contact from '../views/Contact'
+import Settings from '../views/Settings'
 
 
 const Home = () => {
@@ -29,6 +31,7 @@ const Home = () => {
                     <Switch>
                         <Route exact path="/"><Dashboard /></Route>
                         <Route exact path="/contact"><Contact /></Route>
+                        <Route exact path="/settings"><Settings /></Route>
                     </Switch>
                 </div>
             </div>

@@ -1,5 +1,7 @@
 import React from 'react'
 import app from '../../base';
+import firebase from 'firebase'
+import { NavLink } from 'react-router-dom'
 
 import avatar from '../../assets/img/avatar.jpg'
 
@@ -10,6 +12,26 @@ const Navigation = (props) => {
 
     // close sidebar
     const { handle } = props
+    var user = firebase.auth().currentUser;
+    var name, email, photoUrl, uid, emailVerified;
+    
+    // eslint-disable-next-line
+    if (user != null) {
+        name = user.displayName;
+        email = user.email;
+        photoUrl = user.photoURL;
+        emailVerified = user.emailVerified;
+        uid = user.uid;
+    };
+
+    // show name or email
+    let showInfo;
+
+    if (user.displayName == null) {
+      showInfo = user.email;
+    } else {
+      showInfo = user.displayName;
+    }
 
     return (
         <nav className="navbar navbar-expand">
@@ -19,9 +41,12 @@ const Navigation = (props) => {
             <ul className="navbar-nav">
                 <li className="nav-item dropdown">
                     <button className="nav-link dropdown-toggle avatar" id="navbarDropdown" data-bs-toggle="dropdown" aria-expanded="false">
-                        <img src={avatar} alt="" />Kristián Valčo
+                        {showInfo}
                     </button>
                     <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <li>
+                            <NavLink className="dropdown-item" to="/settings">Nastavenia</NavLink>
+                        </li>
                         <li>
                             <button className="dropdown-item" onClick={() => app.auth().signOut()}>Odhlásiť sa</button>
                         </li>

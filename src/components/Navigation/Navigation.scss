@@ -21,6 +21,8 @@
             cursor: pointer;
         }
         .avatar {
+            border: none;
+            background: none;
             color: $black;
             font-weight: 500;
             &:hover, &:focus, &:active {

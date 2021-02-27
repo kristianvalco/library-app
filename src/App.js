@@ -9,7 +9,6 @@ import Login from "./components/Login"
 import AuthProvider from "./Auth"
 import PrivateRoute from "./PrivateRoute"
 
-
 function App() {
     return (
         <Router>

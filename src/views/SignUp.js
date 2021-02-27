@@ -1,5 +1,4 @@
 import React, { useCallback } from 'react';
-import { withRouter } from "react-router";
 import app from '../base';
 
 const SignUp = ({ history }) => {
@@ -34,4 +33,4 @@ const SignUp = ({ history }) => {
     )
 }
 
-export default withRouter(SignUp);
+export default SignUp;
