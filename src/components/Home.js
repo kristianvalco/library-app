@@ -4,6 +4,11 @@ import React, { useState } from 'react'
 // components
 import Sidebar from './Sidebar/Sidebar'
 import Navigation from './Navigation/Navigation'
+import { Switch, Route } from 'react-router-dom';
+
+import Contact from '../views/Contact'
+import Dashboard from '../views/Dashboard'
+
 
 const Home = () => {
 
@@ -21,7 +26,10 @@ const Home = () => {
             <div id="content" className={`${isActive ? "" : "active"}`}>
                 <Navigation handle={handleToggle} />
                 <div className="main">
-                    <h1>Hello</h1>
+                    <Switch>
+                        <Route exact path="/"><Dashboard /></Route>
+                        <Route exact path="/contact"><Contact /></Route>
+                    </Switch>
                 </div>
             </div>
         </div>

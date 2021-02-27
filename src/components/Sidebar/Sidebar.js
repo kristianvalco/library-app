@@ -22,6 +22,7 @@ const Sidebar = (props) => {
             <ul className="side-navbar">
                 <li className="side-navbar-item">
                     <NavLink to="/" exact>Domov</NavLink>
+                    <NavLink to="/contact">Contact</NavLink>
                 </li>
             </ul>
         </nav>
