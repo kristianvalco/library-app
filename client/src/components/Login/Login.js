@@ -1,8 +1,8 @@
 import React, { useCallback, useContext } from 'react'
 import { withRouter, Redirect } from "react-router"
-import app from '../base'
-import { AuthContext } from '../Auth'
-import logo from '../assets/img/sosthe-logo.svg'
+import app from '../../base'
+import { AuthContext } from '../../Auth'
+import logo from '../../assets/img/sosthe-logo.svg'
 
 // CSS
 import './Login.scss'
