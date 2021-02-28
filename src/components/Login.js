@@ -27,17 +27,25 @@ const Login = ({ history }) => {
         return <Redirect to="/" />;
     }
 
+    let myCurrentDate = new Date()
+    let year = myCurrentDate.getFullYear();
+
     return (
         <div className="login">
             <div className="container">
                 <div className="row">
-                    <div className="col-xl-12">
+                    <div className="col-xl-6">
                         <form onSubmit={handleLogin}>
                             <img src={logo} alt="" className="d-flex justify-content-center" />
                             <input type="email" name="email" className="form-control email shadow-none" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Email" />
                             <input type="password" name="password" className="form-control password shadow-none" id="exampleInputPassword1" placeholder="Password" />
                             <button type="submit" className="btn btn-primary shadow-none">Prihlásiť sa</button>
                         </form>
+                    </div>
+                </div>
+                <div className="row">
+                    <div className="col-xl-12">
+                        <div class="fixed-bottom text-center mb-4 copyright">&copy; { year } <a href="http://sosthe.sk" target="_blank" rel="noreferrer">Stredná odborná škola technická Humenné.</a></div>
                     </div>
                 </div>
             </div>

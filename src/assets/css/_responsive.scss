@@ -1,6 +1,6 @@
 @media (max-width: 768px) {
     #sidebar {
-        margin-left: -300px;
+        margin-left: -300px !important;
     }
     #sidebar.active {
         margin-left: 0 !important;
@@ -18,5 +18,16 @@
         .navbar {
             width: calc(100% - 300px) !important;
         }
+    }
+    .login {
+        form {
+            padding: 2em !important;
+        }
+    }
+}
+
+@media (max-width: 425px) {
+    .login {
+        margin-top: 2em !important;
     }
 }

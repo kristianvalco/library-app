@@ -9,13 +9,12 @@ const Dashboard = () => {
     var user = firebase.auth().currentUser;
     var name, email, photoUrl, uid, emailVerified;
 
-    // eslint-disable-next-line
     if (user != null) {
-        name = user.displayName;
-        email = user.email;
-        photoUrl = user.photoURL;
-        emailVerified = user.emailVerified;
-        uid = user.uid;
+        name = user.displayName; // eslint-disable-line no-unused-vars
+        email = user.email; // eslint-disable-line no-unused-vars
+        photoUrl = user.photoURL; // eslint-disable-line no-unused-vars
+        emailVerified = user.emailVerified; // eslint-disable-line no-unused-vars
+        uid = user.uid; // eslint-disable-line no-unused-vars
     };
 
     // show name or email
@@ -28,7 +27,7 @@ const Dashboard = () => {
     }
 
     return (
-        <div className="dashboard animate__animated animate__zoomIn">
+        <div className="dashboard">
             <div className="container-fluid">
                 <div className="row">
 
