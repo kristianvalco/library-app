@@ -45,7 +45,7 @@ const Login = ({ history }) => {
                 </div>
                 <div className="row">
                     <div className="col-xl-12">
-                        <div class="fixed-bottom text-center mb-4 copyright">&copy; { year } <a href="http://sosthe.sk" target="_blank" rel="noreferrer">Stredná odborná škola technická Humenné.</a></div>
+                        <div className="fixed-bottom text-center mb-4 copyright">&copy; { year } <a href="http://sosthe.sk" target="_blank" rel="noreferrer">Stredná odborná škola technická Humenné.</a></div>
                     </div>
                 </div>
             </div>
