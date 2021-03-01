@@ -1,27 +1,25 @@
-// import { FETCH_ALL, CREATE, UPDATE, DELETE } from '../constants/actionTypes';
-// import * as api from '../api';
+import { FETCH_ALL, CREATE, UPDATE, DELETE } from '../constants/actionTypes';
+import * as api from '../api';
 
+export const getBooks = () => async (dispatch) => {
+    try {
+        const { data } = await api.fetchBooks();
 
-// // Action Creators
-// export const getPosts = () => async (dispatch) => {
-//     try {
-//         const { data } = await api.fetchPosts();
+        dispatch({ type: FETCH_ALL, payload: data });
+    } catch (error) {
+        console.log(error);
+    }
+}
 
-//         dispatch({ type: FETCH_ALL, payload: data });
-//     } catch (error) {
-//         console.log(error);
-//     }
-// }
+export const addNew = (book) => async (dispatch) => {
+    try {
+        const { data } = await api.addNew(book);
 
-// export const createPost = (post) => async (dispatch) => {
-//     try {
-//         const { data } = await api.createPost(post);
-
-//         dispatch({ type: CREATE, payload: data });
-//     } catch (error) {
-//         console.log(error);
-//     }
-// }
+        dispatch({ type: CREATE, payload: data });
+    } catch (error) {
+        console.log(error);
+    }
+}
 
 // export const updatePost = (id, post) => async (dispatch) => {
 //     try {

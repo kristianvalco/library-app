@@ -8,7 +8,9 @@ import { Switch, Route } from 'react-router-dom';
 
 // views
 import Dashboard from '../views/Dashboard'
+import NewRecord from '../views/NewRecord'
 import Contact from '../views/Contact'
+import Books from '../views/Books'
 import Settings from '../views/Settings'
 
 const Home = () => {
@@ -29,7 +31,9 @@ const Home = () => {
                 <div className="main">
                     <Switch>
                         <Route exact path="/"><Dashboard /></Route>
+                        <Route exact path="/newrecord"><NewRecord /></Route>
                         <Route exact path="/contact"><Contact /></Route>
+                        <Route exact path="/books"><Books /></Route>
                         <Route exact path="/settings"><Settings /></Route>
                     </Switch>
                 </div>

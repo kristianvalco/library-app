@@ -20,7 +20,7 @@
             color: $white;
         }
         a {
-            display: inline-block;
+            display: block;
             padding: 1.2rem 3rem;
             white-space: nowrap;
             color: #a0a5bc;
@@ -44,10 +44,17 @@
 }
 
 #sidebar {
-    .addNew svg {
-        width: 1em;
-        margin: auto;
-        margin-right: 1em;
-        fill: $white;
+    .addNew {
+        svg {
+            width: 1em;
+            margin: auto;
+            margin-right: 1em;
+            fill: $white;
+        }
+        .btn {
+            display: block !important;
+            width: max-content;
+            margin: 0 auto;
+        }
     }
 }

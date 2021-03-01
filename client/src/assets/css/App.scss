@@ -57,3 +57,22 @@
 .main {
     transition: all 0.4s ease-in-out;
 }
+
+form {
+    border-radius: 0.6em;
+    .form-control {
+        padding: 1.5em;
+        border: 0;
+        border-radius: 0.4em;
+        background: $navbar;
+        margin-top: 1.5em;
+        font-weight: 500;
+        border: 1px solid $navbar;
+        &:focus {
+            border: 1px solid darken($navbar, 30%);
+        }
+        &:first-child {
+            margin-top: 0;
+        }
+    }
+}
