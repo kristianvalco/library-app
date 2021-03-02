@@ -1,0 +1,60 @@
+@import '../../assets/css/variables';
+
+.sidebarLogo {
+    display: flex;
+    justify-items: center;
+    margin: auto;
+    width: 5em;
+    margin: 3em auto;
+}
+
+.side-navbar {
+    margin-top: 2em;
+    padding: 0;
+    list-style: none;
+    overflow-x: hidden;
+    .side-navbar-item {
+        width: inherit;
+        transition: all 0.2s ease-in-out;
+        &:hover {
+            color: $white;
+        }
+        a {
+            display: block;
+            padding: 1.2rem 3rem;
+            white-space: nowrap;
+            color: #a0a5bc;
+            text-decoration: none;
+            transition: all 0.2s ease-in-out;
+            font-weight: 500;
+            &.active, &:hover {
+                color: $black;
+                svg {
+                    fill: $black;
+                }
+            }
+            svg {
+                transition: all 0.2s ease-in-out;
+                margin: 0 1.2em 0.3em 0;
+                height: auto;
+                width: 1.2em;
+                fill: #a0a5bc;
+            }
+        }
+    }
+}
+
+#sidebar {
+    .addNew {
+        svg {
+            height: auto;
+            width: 2em;
+            margin: auto 1em 0.2em auto;
+            fill: $white;
+        }
+        .btn {
+            width: max-content;
+            margin: auto;
+        }
+    }
+}

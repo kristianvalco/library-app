@@ -1,0 +1,15 @@
+@import '../../assets/css/variables';
+
+.btn-delete {
+    background: none;
+    border: 0;
+    svg {
+        fill: #dc3545;
+        height: 2em;
+        width: auto;
+        transition: $transition;
+        &:hover, &:focus, &:active {
+            fill: darken(#dc3545, 20%);
+        }
+    }
+}

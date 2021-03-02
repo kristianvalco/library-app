@@ -1,0 +1,54 @@
+@import '../../assets/css/variables';
+
+.navbar {
+    -webkit-box-shadow: 0px 0px 35px 0px rgba(0,0,0,0.08);
+    -moz-box-shadow: 0px 0px 35px 0px rgba(0,0,0,0.08);
+    box-shadow: 0px 0px 35px 0px rgba(0,0,0,0.08);
+    background: $navbar;
+    padding: 1em 3em 1em 1em;
+    position: fixed;
+    z-index: 99;
+    width: calc(100% - 300px);
+    .close-btn {
+        background: none;
+        border: 0;
+        svg {
+            height: 2em;
+            width: auto;
+            fill: $black;
+            transition: $transition;
+            &:hover {
+                fill: $primary;
+            }
+        }
+    }
+    .navbar-nav {
+        margin-left: auto;
+        a {
+            cursor: pointer;
+        }
+        .avatar {
+            border: none;
+            background: none;
+            color: $black;
+            font-weight: 500;
+            &:hover, &:focus, &:active {
+                color: $primary;
+            }
+            img {
+                width: 2.5em;
+                border-radius: 50%;
+                margin-right: 0.8em;
+            }
+        }
+        .dropdown-toggle::after {
+            margin-left: 0.8em;
+        }
+    }
+}
+
+#content.active {
+    .navbar {
+        width: 100%;
+    }
+}
