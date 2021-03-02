@@ -10,13 +10,16 @@
     z-index: 99;
     width: calc(100% - 300px);
     .close-btn {
-        border: 0;
         background: none;
-        width: 2.5em;
-        fill: $black;
-        transition: $transition;
-        &:hover {
-            fill: $primary;
+        border: 0;
+        svg {
+            height: 2em;
+            width: auto;
+            fill: $black;
+            transition: $transition;
+            &:hover {
+                fill: $primary;
+            }
         }
     }
     .navbar-nav {

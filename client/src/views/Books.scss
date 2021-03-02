@@ -1,14 +1,44 @@
-table {
-    counter-reset: rowNumber;
-  }
-  
-table tbody tr {
-    counter-increment: rowNumber;
-  }
-  
-table tbody tr td:first-child::before {
-    content: counter(rowNumber);
-    min-width: 1em;
-    margin-right: 0.5em;
-    cursor: text;
+@import '../assets/css/variables';
+
+.table {
+    -webkit-box-shadow: 0px 0px 35px 0px rgba(0,0,0,0.08);
+    -moz-box-shadow: 0px 0px 35px 0px rgba(0,0,0,0.08);
+    box-shadow: 0px 0px 35px 0px rgba(0,0,0,0.08);
+    background: $navbar;
+    border-collapse: collapse !important;
+    border-radius: 0.6em;
+    th {
+        padding: 1em;
+        font-weight: 400;
+        border-bottom: 0.15em solid darken($navbar, 5%) !important;
+        border-right: 0.15em solid darken($navbar, 5%) !important;
+        &:last-child {
+            border-right: none !important;
+        }
+    }
+    td, .idNumber {
+        border: none !important;
+        padding: 1em;
+        font-weight: 400;
+        border-right: 0.15em solid darken($navbar, 5%) !important;
+        &:last-child {
+            border-right: none !important;
+        }
+    }
+    tr {
+        border-bottom: 0.15em solid darken($navbar, 5%) !important;
+        &:last-child {
+            border-bottom: none !important;
+        }
+    }
+    thead {
+        vertical-align: middle !important;
+        border-bottom: none !important;
+        th {
+            font-weight: 600;
+        }
+    }
+    tbody {
+        vertical-align: middle !important;
+    }
 }

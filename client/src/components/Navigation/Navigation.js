@@ -34,7 +34,9 @@ const Navigation = (props) => {
     return (
         <nav className="navbar navbar-expand">
             <button onClick={handle} type="button" className="close-btn">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 15"><g id="Layer_2" data-name="Layer 2"><g id="Layer_1-2" data-name="Layer 1"><path className="menuIcon" d="M0,3V0H20V3ZM0,9V6H16V9Zm0,6V12H20v3Z" /></g></g></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-list" viewBox="0 0 16 16">
+                    <path d="M2.5 11.5A.5.5 0 0 1 3 11h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4A.5.5 0 0 1 3 7h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4A.5.5 0 0 1 3 3h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/>
+                </svg>
             </button>
             <ul className="navbar-nav">
                 <li className="nav-item dropdown">

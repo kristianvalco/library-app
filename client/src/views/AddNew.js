@@ -70,7 +70,7 @@ const NewRecord = ({ currentId, setCurrentId }) => {
                             onChange={(e) => setBookData({ ...bookData, count: e.target.value })} 
                         />
                         <div className="mt-4">
-                            <button type="submit" className="btn btn-primary shadow-none float-end ms-3">Submit</button>
+                            <button type="submit" className="btn btn-primary shadow-none float-end ms-3">Odoslať</button>
                             <button onClick={clear} className="btn btn-primary shadow-none float-end">Clear</button>
                         </div>
                     </form>

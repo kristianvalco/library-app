@@ -44,7 +44,7 @@ const Dashboard = () => {
                     <div className="col-xl-3">
                         <div className="card">
                             <div className="card-body">
-                                <h5 className="card-title">50 000</h5>
+                                <h5 className="card-title">145</h5>
                             </div>
                         </div>
                     </div>

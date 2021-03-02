@@ -36,7 +36,8 @@
             svg {
                 transition: all 0.2s ease-in-out;
                 margin: 0 1.2em 0.3em 0;
-                width: 1em;
+                height: auto;
+                width: 1.2em;
                 fill: #a0a5bc;
             }
         }
@@ -46,15 +47,14 @@
 #sidebar {
     .addNew {
         svg {
-            width: 1em;
-            margin: auto;
-            margin-right: 1em;
+            height: auto;
+            width: 2em;
+            margin: auto 1em 0.2em auto;
             fill: $white;
         }
         .btn {
-            display: block !important;
             width: max-content;
-            margin: 0 auto;
+            margin: auto;
         }
     }
 }

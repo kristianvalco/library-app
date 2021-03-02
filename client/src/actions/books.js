@@ -21,32 +21,22 @@ export const addNew = (book) => async (dispatch) => {
     }
 }
 
-// export const updatePost = (id, post) => async (dispatch) => {
-//     try {
-//         const { data } = await api.updatePost(id, post);
+export const updateBook = (id, book) => async (dispatch) => {
+    try {
+        const { data } = await api.updateBook(id, book);
 
-//         dispatch({ type: UPDATE, payload: data });
-//     } catch (error) {
-//         console.log(error);
-//     }
-// }
+        dispatch({ type: UPDATE, payload: data });
+    } catch (error) {
+        console.log(error);
+    }
+}
 
-// export const deletePost = (id) => async (dispatch) => {
-//     try {
-//         await api.deletePost(id);
+export const deleteBook = (id) => async (dispatch) => {
+    try {
+        await api.deleteBook(id);
 
-//         dispatch({ type: DELETE, payload: id });
-//     } catch (error) {
-//         console.log(error);
-//     }
-// }
-
-// export const likePost = (id) => async (dispatch) => {
-//     try {
-//         const { data } = await api.likePost(id);
-
-//         dispatch({ type: UPDATE, payload: data });
-//     } catch (error) {
-//         console.log(error);
-//     }
-// }
+        dispatch({ type: DELETE, payload: id });
+    } catch (error) {
+        console.log(error);
+    }
+}

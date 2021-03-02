@@ -9,8 +9,6 @@ import './Books.scss'
 
 const Books = () => {
     const books = useSelector((state) => state.books);
-
-    console.log(books);
     
     const [currentId, setCurrentId] = useState(null);
     const dispatch = useDispatch();
@@ -23,22 +21,28 @@ const Books = () => {
         <div className="container-fluid">
             <div className="row">
                 <div className="col-xl-12">
-                    <table class="table table-bordered bg-white">
+                    <h1 className="mb-4">Knihy</h1>
+                </div>
+            </div>
+            <div className="row">
+                <div className="col-xl-12">
+                    <table className="table">
                         <thead>
                             <tr>
-                                <th scope="col">#</th>
+                                <th scope="col"></th>
                                 <th scope="col">Názov</th>
                                 <th scope="col">Autor</th>
                                 <th scope="col">Vydanie</th>
                                 <th scope="col">Počet</th>
+                                <th scope="col"></th>
                             </tr>
                         </thead>
                         {
-                            !books.length ? <div className="spinner-border" role="status" /> : (
+                            !books.length ? <tbody className="spinner-border" role="status"></tbody> : (
                                 <tbody>
-                                    {books.map((book) => (
+                                    {books.map((book, i) => (
                                         <tr key={book._id}>
-                                            <td scope="row"></td>
+                                            <th scope="row" className="idNumber">{i+1}</th>
                                             <Book book={book} setCurrentId={setCurrentId} />
                                         </tr>
                                     ))}
