@@ -1,9 +1,7 @@
 @import '../assets/css/variables';
 
 .table {
-    -webkit-box-shadow: 0px 0px 35px 0px rgba(0,0,0,0.08);
-    -moz-box-shadow: 0px 0px 35px 0px rgba(0,0,0,0.08);
-    box-shadow: 0px 0px 35px 0px rgba(0,0,0,0.08);
+    box-shadow: 0 0 0.875rem rgba(41, 48, 66, 0.051);
     background: $navbar;
     border-collapse: collapse !important;
     border-radius: 0.6em;
