@@ -1,6 +1,6 @@
 # Školská databáza kníh
 
-Frontend of the school database of books - SOŠ technická Humenné. This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Full Stack book management app for SOŠ technická Humenné. This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
 
