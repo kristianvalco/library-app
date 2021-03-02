@@ -5,14 +5,15 @@ import { getBooks } from '../actions/books';
 
 import Book from '../components/Book/Book';
 
+// css
 import './Books.scss'
 
 const Books = () => {
     const books = useSelector((state) => state.books);
-    
+
     const [currentId, setCurrentId] = useState(null);
     const dispatch = useDispatch();
-
+    
     useEffect(() => {
         dispatch(getBooks());
     }, [currentId, dispatch]);

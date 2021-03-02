@@ -3,7 +3,10 @@ import mongoose from 'mongoose';
 const bookSchema = mongoose.Schema({
     title: String,
     author: String,
-    year: Number,
+    year: {
+        type: Number,
+        default: 0
+    },
     count: {
         type: Number,
         default: 0
