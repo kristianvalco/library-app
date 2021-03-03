@@ -21,7 +21,7 @@ const BooksTable = () => {
     return (
         <div className="container-fluid bookstable">
             <div className="row">
-                <div className="col-xl-6">
+                <div className="col-xl-6 d-flex align-items-end">
                     <h4 className="site-title">Knihy</h4>
                 </div>
                 <div className="col-xl-6">
@@ -37,9 +37,10 @@ const BooksTable = () => {
             </div>
             <div className="row">
                 <div className="col-xl-12">
-                    <div className="addform" className={`${isActive ? "addform" : "addform mb-4"}`}>
+                    <div className="addform" className={`${isActive ? "addform" : "addform mb-4"}`} >
                         <div className={`${isActive ? "form" : "form active"}`}>
-                            <Form toggle={Toggle} currentId={currentId} setCurrentId={setCurrentId} />
+                            <h4 className="mb-4 site-title">{currentId ? 'Upraviť' : 'Pridať nový'} záznam</h4>
+                            <Form Toggle={Toggle} currentId={currentId} setCurrentId={setCurrentId} />
                         </div>
                     </div>
                 </div>

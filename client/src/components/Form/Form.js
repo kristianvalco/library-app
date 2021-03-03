@@ -7,7 +7,7 @@ import { addNew, updateBook } from '../../actions/books';
 // css
 import './Form.scss'
 
-const Form = ({ currentId, setCurrentId, isActive, toggle}) => {
+const Form = ({ currentId, setCurrentId, Toggle}) => {
 
     const [bookData, setBookData] = useState({ title: '', author: '', year: '', count: '' });
     const book = useSelector((state) => currentId ? state.books.find((b) => b._id === currentId) : null);
@@ -26,7 +26,7 @@ const Form = ({ currentId, setCurrentId, isActive, toggle}) => {
             dispatch(addNew(bookData));
         }
         clear();
-        toggle();
+        Toggle();
     }
 
     const clear = () => {
@@ -35,14 +35,17 @@ const Form = ({ currentId, setCurrentId, isActive, toggle}) => {
     }
 
     return (
-        <form autoComplete="off" noValidate onSubmit={handleSubmit}>
+        <form autoComplete="off" onSubmit={handleSubmit}>
             <input
+                id="text"
                 type="text"
                 name="title"
                 className="form-control shadow-none"
                 placeholder="Názov"
                 value={bookData.title}
                 onChange={(e) => setBookData({ ...bookData, title: e.target.value })}
+                required
+                maxlength="50"
             />
             <input
                 type="text"
@@ -51,28 +54,32 @@ const Form = ({ currentId, setCurrentId, isActive, toggle}) => {
                 placeholder="Autor"
                 value={bookData.author}
                 onChange={(e) => setBookData({ ...bookData, author: e.target.value })}
+                required
+                maxlength="50"
             />
             <input
-                type="number"
+                type="text"
                 name="year"
-                min="2000" max={moment().year()}
+                min="1900" max={moment().year()}
                 className="form-control shadow-none"
                 placeholder="Vydanie"
                 value={bookData.year}
-                onChange={(e) => setBookData({ ...bookData, year: e.target.value })}
+                onChange={(e) => setBookData({ ...bookData, year: e.target.value.replace(/\D/g, "") })}
+                required
             />
             <input
-                type="number"
+                type="text"
                 name="count"
                 min="0" max="999"
                 className="form-control shadow-none"
                 placeholder="Počet"
                 value={bookData.count}
-                onChange={(e) => setBookData({ ...bookData, count: e.target.value })}
+                onChange={(e) => setBookData({ ...bookData, count: e.target.value.replace(/\D/g, "")})}
+                required
             />
-            <div className="mt-4">
-                <button type="submit" className="btn btn-primary shadow-none float-end ms-3">Odoslať</button>
-                <button onClick={clear} className="btn btn-primary shadow-none float-end">Clear</button>
+            <div className="mt-4 bg-black">
+                <button type="submit" className="btn btn-success shadow-none float-end ms-3">Odoslať</button>
+                <button onClick={Toggle} className="btn btn-secondary shadow-none float-end">Zatvoriť</button>
             </div>
         </form>
     )

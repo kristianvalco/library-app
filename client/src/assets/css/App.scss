@@ -38,9 +38,10 @@
 .btn {
     font-weight: 500;
     margin: auto;
-    padding: 1em 2em 1em 2em;
-    border-radius: 0.4em;
+    padding: 0.8em 2em 0.8em 2em;
+    border-radius: 0.6em;
     transition: $transition;
+    box-shadow: 0 0.1rem 0.2rem rgba(41, 48, 66, 0.30) !important;
 }
 
 .btn-primary {
@@ -48,7 +49,26 @@
     color: $white;
     border: $primary;
     &:hover, &:active, &:focus {
-        background: darken( $primary, 10% );
+        background: darken( $primary, 5% );
+    }
+}
+
+.btn-secondary {
+    background: $navbar;
+    color: $black;
+    border: $green;
+    &:hover, &:active, &:focus {
+        background: darken( $navbar, 3% );
+        color: lighten( $black, 15% );
+    }
+}
+
+.btn-success {
+    background: $green;
+    color: $white;
+    border: $green;
+    &:hover, &:active, &:focus {
+        background: darken( $green, 5% );
     }
 }
 
@@ -65,7 +85,7 @@ form {
         background: $navbar;
         margin-top: 1.5em;
         font-weight: 500;
-        border: 1px solid $main !important;
+        border: 1px solid $navbar !important;
         &:focus {
             border: 1px solid darken($navbar, 30%) !important;
         }

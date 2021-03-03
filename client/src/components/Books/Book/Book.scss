@@ -4,12 +4,22 @@
     background: none;
     border: 0;
     svg {
-        fill: #dc3545;
+        fill: $red;
         height: 2em;
         width: auto;
         transition: $transition;
         &:hover, &:focus, &:active {
-            fill: darken(#dc3545, 20%);
+            fill: darken($red, 15%);
         }
+    }
+}
+
+.btn-edit {
+    background: none;
+    border: 0;
+    color: $green;  
+    transition: $transition;
+    &:hover, &:focus, &:active {
+        color: darken($green, 15%);
     }
 }

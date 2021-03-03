@@ -9,8 +9,8 @@ import './Dashboard.scss'
 
 const Dashboard = () => {
 
-    var user = firebase.auth().currentUser;
-    var name, email, photoUrl, uid, emailVerified;
+    let user = firebase.auth().currentUser;
+    let name, email, photoUrl, uid, emailVerified;
 
     if (user != null) {
         name = user.displayName; // eslint-disable-line no-unused-vars
@@ -30,19 +30,19 @@ const Dashboard = () => {
     }
 
     const books = useSelector((state) => state.books);
-    
+
     const dispatch = useDispatch();
-    
+
     useEffect(() => {
         dispatch(getBooks());
     }, [dispatch]);
 
     var s = 0;
-    for(var i=0; i<books.length; i++){
+    for (var i = 0; i < books.length; i++) {
         s = s + books[i].count;
     }
     var count = s;
-    
+
     return (
         <div className="dashboard">
             <div className="container-fluid">
