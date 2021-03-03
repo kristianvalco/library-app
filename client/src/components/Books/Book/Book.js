@@ -1,7 +1,7 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
 
-import { deleteBook } from '../../actions/books';
+import { deleteBook } from '../../../actions/books';
 
 // css
 import './Book.scss'
