@@ -29,7 +29,7 @@
             transition: all 0.2s ease-in-out;
             font-weight: 500;
             &.active, &:hover {
-                background: darken($navbar, 5%);
+                background: darken($navbar, 2%);
                 color: $black;
                 svg {
                     fill: $black;

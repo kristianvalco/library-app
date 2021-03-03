@@ -29,7 +29,7 @@ export const updateBook = async (req, res) => {
     const { id: _id } = req.params;
     const book = req.body;
 
-    if(!mongoose.Types.ObjectId.isValid(_id)) return res.status(404).send('No post with that id');
+    if(!mongoose.Types.ObjectId.isValid(_id)) return res.status(404).send('No book with that id');
 
     const updatedBook = await Book.findByIdAndUpdate(_id, { ...book, _id }, { new: true });
 
@@ -39,7 +39,7 @@ export const updateBook = async (req, res) => {
 export const deleteBook = async (req, res) => {
     const { id } = req.params;
     
-    if(!mongoose.Types.ObjectId.isValid(id)) return res.status(404).send('No post with that id');
+    if(!mongoose.Types.ObjectId.isValid(id)) return res.status(404).send('No book with that id');
 
     await Book.findByIdAndRemove(id);
 

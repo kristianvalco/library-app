@@ -2,12 +2,15 @@ import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import moment from 'moment';
 
-import { addNew } from '../../actions/books';
+import { addNew, updateBook } from '../../actions/books';
 
-const Form = ({ currentId, setCurrentId, isActive }) => {
+// css
+import './Form.scss'
+
+const Form = ({ currentId, setCurrentId, isActive, toggle}) => {
 
     const [bookData, setBookData] = useState({ title: '', author: '', year: '', count: '' });
-    const book = useSelector((state) => currentId ? state.books.find((p) => p._id === currentId) : null);
+    const book = useSelector((state) => currentId ? state.books.find((b) => b._id === currentId) : null);
     const dispatch = useDispatch();
 
     useEffect(() => {
@@ -18,15 +21,16 @@ const Form = ({ currentId, setCurrentId, isActive }) => {
         e.preventDefault();
 
         if (currentId) {
-            // dispatch(updatePost(currentId, postData));
+            dispatch(updateBook(currentId, bookData));
         } else {
             dispatch(addNew(bookData));
         }
         clear();
+        toggle();
     }
 
     const clear = () => {
-        // setCurrentId(null);
+        setCurrentId(null);
         setBookData({ title: '', author: '', year: '', count: '' });
     }
 

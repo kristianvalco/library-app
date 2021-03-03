@@ -5,9 +5,11 @@ import Books from '../components/Books/Books'
 import Form from '../components/Form/Form';
 
 // css
-import './Books.scss'
+import './BooksTable.scss'
 
 const BooksTable = () => {
+    const [currentId, setCurrentId] = useState(null);
+
     // is sidebar active? false
     const [isActive, setActive] = useState("false");
 
@@ -17,7 +19,7 @@ const BooksTable = () => {
     };
 
     return (
-        <div className="container-fluid">
+        <div className="container-fluid bookstable">
             <div className="row">
                 <div className="col-xl-6">
                     <h4 className="site-title">Knihy</h4>
@@ -35,16 +37,16 @@ const BooksTable = () => {
             </div>
             <div className="row">
                 <div className="col-xl-12">
-                    <div className="addform">
+                    <div className="addform" className={`${isActive ? "addform" : "addform mb-4"}`}>
                         <div className={`${isActive ? "form" : "form active"}`}>
-                            <Form/>
+                            <Form toggle={Toggle} currentId={currentId} setCurrentId={setCurrentId} />
                         </div>
                     </div>
                 </div>
             </div>
             <div className="row">
                 <div className="col-xl-12">
-                    <Books />
+                    <Books Toggle={Toggle} currentId={currentId} setCurrentId={setCurrentId}/>
                 </div>
             </div>
         </div>

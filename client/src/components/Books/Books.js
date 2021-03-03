@@ -1,14 +1,18 @@
 import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 
+// actions
 import { getBooks } from '../../actions/books';
 
+// components
 import Book from '../Books/Book/Book';
 
-const Books = () => {
+// css
+import './Books.scss'
+
+const Books = ({ currentId, setCurrentId, Toggle }) => {
     const books = useSelector((state) => state.books);
 
-    const [currentId, setCurrentId] = useState(null);
     const dispatch = useDispatch();
     
     useEffect(() => {
@@ -33,7 +37,7 @@ const Books = () => {
                         {books.map((book, i) => (
                             <tr key={book._id}>
                                 <th scope="row" className="idNumber">{i + 1}</th>
-                                <Book book={book} setCurrentId={setCurrentId} />
+                                <Book book={book} setCurrentId={setCurrentId} Toggle={Toggle} />
                             </tr>
                         ))}
                     </tbody>

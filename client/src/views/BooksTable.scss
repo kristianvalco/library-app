@@ -1,0 +1,24 @@
+@import '../assets/css/variables';
+
+.addNew {
+    svg {
+        height: auto;
+        width: 2em;
+        margin: auto 1em 0.2em -0.8em;
+        fill: $white;
+    }
+    .btn {
+        width: max-content;
+        margin: auto;
+    }
+}
+
+.addform {
+    overflow: hidden;
+
+    .active {
+        margin-top: 0em;
+        opacity: 1;
+    }
+    
+}

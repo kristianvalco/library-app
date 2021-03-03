@@ -65,9 +65,9 @@ form {
         background: $navbar;
         margin-top: 1.5em;
         font-weight: 500;
-        border: 1px solid $navbar;
+        border: 1px solid $main !important;
         &:focus {
-            border: 1px solid darken($navbar, 30%);
+            border: 1px solid darken($navbar, 30%) !important;
         }
         &:first-child {
             margin-top: 0;

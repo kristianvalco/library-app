@@ -1,4 +1,4 @@
-@import '../assets/css/variables';
+@import '../../assets/css/variables';
 
 .table {
     box-shadow: 0 0 0.875rem rgba(41, 48, 66, 0.051);
@@ -24,6 +24,7 @@
         }
     }
     tr {
+        transition: $transition;
         border-bottom: 0.15em solid darken($navbar, 5%) !important;
         &:last-child {
             border-bottom: none !important;
@@ -38,27 +39,10 @@
     }
     tbody {
         vertical-align: middle !important;
-    }
-}
-
-.addNew {
-    svg {
-        height: auto;
-        width: 2em;
-        margin: auto 1em 0.2em -0.8em;
-        fill: $white;
-    }
-    .btn {
-        width: max-content;
-        margin: auto;
-    }
-}
-
-.addform {
-    .form {
-        display: none;
-    }
-    .active {
-        display: block;
+        tr {
+            &:hover, &:focus, &:active {
+                background: darken($navbar, 2%);
+            }
+        }
     }
 }
