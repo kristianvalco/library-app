@@ -40,3 +40,25 @@
         vertical-align: middle !important;
     }
 }
+
+.addNew {
+    svg {
+        height: auto;
+        width: 2em;
+        margin: auto 1em 0.2em -0.8em;
+        fill: $white;
+    }
+    .btn {
+        width: max-content;
+        margin: auto;
+    }
+}
+
+.addform {
+    .form {
+        display: none;
+    }
+    .active {
+        display: block;
+    }
+}

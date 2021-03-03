@@ -6,6 +6,7 @@
     margin: auto;
     width: 5em;
     margin: 3em auto;
+    transition: width 0.2s ease-in-out;
 }
 
 .side-navbar {
@@ -23,11 +24,12 @@
             display: block;
             padding: 1.2rem 3rem;
             white-space: nowrap;
-            color: #a0a5bc;
+            color: darken($navbar, 30%);
             text-decoration: none;
             transition: all 0.2s ease-in-out;
             font-weight: 500;
             &.active, &:hover {
+                background: darken($navbar, 5%);
                 color: $black;
                 svg {
                     fill: $black;
@@ -38,23 +40,8 @@
                 margin: 0 1.2em 0.3em 0;
                 height: auto;
                 width: 1.2em;
-                fill: #a0a5bc;
+                fill: darken($navbar, 30%);
             }
-        }
-    }
-}
-
-#sidebar {
-    .addNew {
-        svg {
-            height: auto;
-            width: 2em;
-            margin: auto 1em 0.2em auto;
-            fill: $white;
-        }
-        .btn {
-            width: max-content;
-            margin: auto;
         }
     }
 }

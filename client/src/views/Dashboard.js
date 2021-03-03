@@ -47,8 +47,7 @@ const Dashboard = () => {
         <div className="dashboard">
             <div className="container-fluid">
                 <div className="row">
-
-                    <h4 className="site-title">Dashboard</h4>
+                    <h4 className="site-title">Domov</h4>
                 </div>
                 <div className="row">
                     <div className="col-xl-3">

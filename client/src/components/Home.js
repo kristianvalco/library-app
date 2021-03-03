@@ -8,7 +8,6 @@ import Navigation from './Navigation/Navigation'
 
 // views
 import Dashboard from '../views/Dashboard'
-import AddNew from '../views/AddNew'
 import Books from '../views/Books'
 import Settings from '../views/Settings'
 
@@ -30,7 +29,6 @@ const Home = () => {
                 <div className="main">
                     <Switch>
                         <Route exact path="/"><Dashboard /></Route>
-                        <Route exact path="/addnew"><AddNew /></Route>
                         <Route exact path="/books"><Books /></Route>
                         <Route exact path="/settings"><Settings /></Route>
                     </Switch>

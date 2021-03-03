@@ -1,47 +1,76 @@
 import React, { useState, useEffect } from 'react';
-import FileBase from 'react-file-base64';
 import { useDispatch, useSelector } from 'react-redux';
+import moment from 'moment';
 
-import { createPost, updatePost } from '../../actions/posts';
+import { addNew } from '../../actions/books';
 
-const Form = ({ currentId, setCurrentId }) => {
-    const [postData, setPostData] = useState({ creator: '', title: '', message: '', tags: '', selectedFile: '' });
-    const post = useSelector((state) => currentId ? state.posts.find((p) => p._id === currentId) : null);
+const Form = ({ currentId, setCurrentId, isActive }) => {
+
+    const [bookData, setBookData] = useState({ title: '', author: '', year: '', count: '' });
+    const book = useSelector((state) => currentId ? state.books.find((p) => p._id === currentId) : null);
     const dispatch = useDispatch();
 
     useEffect(() => {
-        if(post) setPostData(post);
-    }, [post])
+        if (book) setBookData(book);
+    }, [book])
 
     const handleSubmit = (e) => {
         e.preventDefault();
 
-        if(currentId) {
-            dispatch(updatePost(currentId, postData));
+        if (currentId) {
+            // dispatch(updatePost(currentId, postData));
         } else {
-            dispatch(createPost(postData));
+            dispatch(addNew(bookData));
         }
         clear();
     }
 
     const clear = () => {
-        setCurrentId(null);
-        setPostData({ creator: '', title: '', message: '', tags: '', selectedFile: '' });
+        // setCurrentId(null);
+        setBookData({ title: '', author: '', year: '', count: '' });
     }
 
     return (
-        <div>
-            <form autoComplete="off" noValidate onSubmit={handleSubmit}>
-                <h3>{currentId ? 'Upravujem' : 'Vytvaram'}  lasku</h3>
-                <input name="creator" placeholder="Creator" value={postData.creator} onChange={(e) => setPostData({ ...postData, creator: e.target.value })} />
-                <input name="title" placeholder="Title" value={postData.title} onChange={(e) => setPostData({ ...postData, title: e.target.value })} />
-                <input name="message" placeholder="Message" value={postData.message} onChange={(e) => setPostData({ ...postData, message: e.target.value })} />
-                <input name="tags" placeholder="Tags" value={postData.tags} onChange={(e) => setPostData({ ...postData, tags: e.target.value.split(',') })} />
-                <FileBase type="file" multiple={false} onDone={({base64}) => setPostData({ ...postData, selectedFile: base64 })} />
-                <button type="submit">Submit</button>
-                <button onClick={clear}>Clear</button>
-            </form>
-        </div>
+        <form autoComplete="off" noValidate onSubmit={handleSubmit}>
+            <input
+                type="text"
+                name="title"
+                className="form-control shadow-none"
+                placeholder="Názov"
+                value={bookData.title}
+                onChange={(e) => setBookData({ ...bookData, title: e.target.value })}
+            />
+            <input
+                type="text"
+                name="author"
+                className="form-control shadow-none"
+                placeholder="Autor"
+                value={bookData.author}
+                onChange={(e) => setBookData({ ...bookData, author: e.target.value })}
+            />
+            <input
+                type="number"
+                name="year"
+                min="2000" max={moment().year()}
+                className="form-control shadow-none"
+                placeholder="Vydanie"
+                value={bookData.year}
+                onChange={(e) => setBookData({ ...bookData, year: e.target.value })}
+            />
+            <input
+                type="number"
+                name="count"
+                min="0" max="999"
+                className="form-control shadow-none"
+                placeholder="Počet"
+                value={bookData.count}
+                onChange={(e) => setBookData({ ...bookData, count: e.target.value })}
+            />
+            <div className="mt-4">
+                <button type="submit" className="btn btn-primary shadow-none float-end ms-3">Odoslať</button>
+                <button onClick={clear} className="btn btn-primary shadow-none float-end">Clear</button>
+            </div>
+        </form>
     )
 }
 
