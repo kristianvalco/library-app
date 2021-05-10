@@ -9,6 +9,8 @@ const Navigation = (props) => {
     // close sidebar
     const { handle } = props
 
+    const user = null;
+
     return (
         <nav className="navbar navbar-expand">
             <button onClick={handle} type="button" className="close-btn">
@@ -17,19 +19,26 @@ const Navigation = (props) => {
                 </svg>
             </button>
             <ul className="navbar-nav">
+                {user ? (
                 <li className="nav-item dropdown">
                     <button className="nav-link dropdown-toggle avatar" id="navbarDropdown" data-bs-toggle="dropdown" aria-expanded="false">
-                        
+                        {user.result.name}
                     </button>
                     <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
                         <li>
                             <NavLink className="dropdown-item" to="/settings">Nastavenia</NavLink>
                         </li>
                         <li>
+                            <button className="dropdown-item" onClick="">Odhlásiť sa</button>
+                        </li>
+                        <li>
                             {/* <button className="dropdown-item" onClick={() => app.auth().signOut()}>Odhlásiť sa</button> */}
                         </li>
                     </ul>
                 </li>
+                ) : (
+                    <h1>fuck it</h1>
+                )}
             </ul>
         </nav>
     )
