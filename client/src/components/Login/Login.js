@@ -1,31 +1,11 @@
-import React, { useCallback, useContext } from 'react'
-import { withRouter, Redirect } from "react-router"
-import app from '../../base'
-import { AuthContext } from '../../Auth'
+import React from 'react'
+import { withRouter } from "react-router"
 import logo from '../../assets/img/sosthe-logo.svg'
 
 // CSS
 import './Login.scss'
 
-const Login = ({ history }) => {
-    const handleLogin = useCallback(async event => {
-        event.preventDefault();
-        const { email, password } = event.target.elements;
-        try {
-            await app
-                .auth()
-                .signInWithEmailAndPassword(email.value, password.value);
-            history.push("/");
-        } catch (error) {
-            alert(error);
-        }
-    }, [history]);
-
-    const { currentUser } = useContext(AuthContext);
-
-    if (currentUser) {
-        return <Redirect to="/" />;
-    }
+const Login = () => {
 
     let myCurrentDate = new Date()
     let year = myCurrentDate.getFullYear();
@@ -35,7 +15,7 @@ const Login = ({ history }) => {
             <div className="container">
                 <div className="row">
                     <div className="col-xl-6">
-                        <form onSubmit={handleLogin}>
+                        <form onSubmit=''>
                             <img src={logo} alt="" className="d-flex justify-content-center" />
                             <input type="email" name="email" className="form-control email shadow-none" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Email" />
                             <input type="password" name="password" className="form-control password shadow-none" id="exampleInputPassword1" placeholder="Heslo" />

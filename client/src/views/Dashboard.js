@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import firebase from 'firebase'
 
 import { getBooks } from '../actions/books';
 
@@ -8,26 +7,6 @@ import { getBooks } from '../actions/books';
 import './Dashboard.scss'
 
 const Dashboard = () => {
-
-    let user = firebase.auth().currentUser;
-    let name, email, photoUrl, uid, emailVerified;
-
-    if (user != null) {
-        name = user.displayName; // eslint-disable-line no-unused-vars
-        email = user.email; // eslint-disable-line no-unused-vars
-        photoUrl = user.photoURL; // eslint-disable-line no-unused-vars
-        emailVerified = user.emailVerified; // eslint-disable-line no-unused-vars
-        uid = user.uid; // eslint-disable-line no-unused-vars
-    };
-
-    // show name or email
-    let showInfo;
-
-    if (user.displayName == null) {
-        showInfo = user.email;
-    } else {
-        showInfo = user.displayName;
-    }
 
     const books = useSelector((state) => state.books);
 
@@ -53,7 +32,7 @@ const Dashboard = () => {
                     <div className="col-xl-3">
                         <div className="card welcome-card">
                             <div className="card-body">
-                                <h5 className="card-title">Vitajte späť, {showInfo}</h5>
+                                <h5 className="card-title">Vitajte späť, </h5>
                             </div>
                         </div>
                     </div>
