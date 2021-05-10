@@ -17,12 +17,22 @@ const Settings = () => {
     }
 
     return (
-        <div className="settings animate__animated animate__zoomIn">
-            <h1>Nastavenia</h1>
-            <form onSubmit={handleSubmit}>
-                <input autoFocus id="name" type="text" onChange={handleInput} />
-                <button type="submit">submit</button>
-            </form>
+        <div className="settings">
+            <div className="row">
+                <div className="col-xl-3">
+                    <h1>Nastavenia</h1>
+                    <form onSubmit={handleSubmit}>
+                        <input 
+                            autoFocus 
+                            id="name"
+                            type="text"
+                            className="form-control shadow-none"
+                            onChange={handleInput} 
+                        />
+                        <button type="submit" className="btn btn-success shadow-none float-start mt-3">Odoslať</button>
+                    </form>
+                </div>
+            </div>
         </div>
     )
 }

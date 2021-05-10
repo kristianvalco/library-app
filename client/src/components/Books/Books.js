@@ -32,7 +32,7 @@ const Books = ({ currentId, setCurrentId, Toggle }) => {
                 </tr>
             </thead>
             {
-                !books.length ? <tbody className="spinner-border" role="status"></tbody> : (
+                !books.length ? <tbody className="spinner-border d-flex justify-content-center" role="status"></tbody> : (
                     <tbody>
                         {books.map((book, i) => (
                             <tr key={book._id}>
