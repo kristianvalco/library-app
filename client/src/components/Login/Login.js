@@ -1,11 +1,15 @@
 import React, { useState } from 'react'
-import { withRouter } from "react-router"
+import { useDispatch } from 'react-redux'
+import { useHistory } from 'react-router-dom' 
 import logo from '../../assets/img/sosthe-logo.svg'
 
 import Input from './Input'
+import { register, login } from '../../actions/login'
 
 // CSS
 import './Login.scss'
+
+const initialState = { firstName: '', lastName: '', email: '', password: '', confirmPassword: '' };
 
 const Login = () => {
     let myCurrentDate = new Date()
@@ -13,21 +17,30 @@ const Login = () => {
 
     const [showPassword, setShowPassword] = useState(false); 
     const [isRegistered, setIsRegistered] = useState(false); 
+    const [formData, setFormData] = useState(initialState);
+    const dispatch = useDispatch();
+    const history = useHistory();
 
     const handleShowPassword = () => setShowPassword((prevShowPassword) => !prevShowPassword);
 
     
-    // const handleSubmit = () => {
+    const handleSubmit = (e) => {
+        e.preventDefault();
         
-        // }
-        
-        const handleChange = () => {
-            
+        if(isRegistered) {
+            dispatch(register(formData, history))
+        } else {
+            dispatch(login(formData, history))
         }
+    }
+
+    const handleChange = (e) => {
+        setFormData({ ...formData, [e.target.name]: e.target.value });
+    }
 
     const switchMode = () => { 
         setIsRegistered((prevIsRegistered) => !prevIsRegistered);
-        handleShowPassword(false);
+        setShowPassword(false);
     }
         
     return (
@@ -35,7 +48,7 @@ const Login = () => {
             <div className="container">
                 <div className="row">
                     <div className="col-xl-6">
-                        <form onSubmit=''>
+                        <form onSubmit={handleSubmit}>
                             <img src={logo} alt="" className="d-flex justify-content-center" />
                             { isRegistered && (
                                 <>
@@ -68,4 +81,4 @@ const Login = () => {
     )
 }
 
-export default withRouter(Login);
+export default Login;
