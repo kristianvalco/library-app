@@ -1,9 +1,8 @@
-import React, { useContext } from 'react'
+import React, { useState } from 'react'
 import { Redirect, Route } from 'react-router-dom';
-import { AuthContext } from './Auth'
 
 const PrivateRoute = ({ component: RouteComponent, ...rest }) => {
-    const {user} = useContext(AuthContext);
+    const [user, setUser] = useState(JSON.parse(localStorage.getItem('profile')));
     return (
         <Route 
             {...rest}

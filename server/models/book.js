@@ -3,6 +3,8 @@ import mongoose from 'mongoose';
 const bookSchema = mongoose.Schema({
     title: String,
     author: String,
+    name: String,
+    creator: String,
     year: {
         type: Number,
         default: 0
