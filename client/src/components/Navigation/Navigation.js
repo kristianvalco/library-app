@@ -15,7 +15,7 @@ const Navigation = (props) => {
     const logout = () => {
         dispatch({ type: 'LOGOUT' });
 
-        history.push('/login');
+        history.push('/');
         setUser(null);
     }
 

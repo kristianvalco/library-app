@@ -28,9 +28,9 @@ const Home = () => {
                 <Navigation handle={handleToggle} />
                 <div className="main">
                     <Switch>
-                        <Route exact path="/"><Dashboard /></Route>
-                        <Route exact path="/books"><BooksTable /></Route>
-                        <Route exact path="/settings"><Settings /></Route>
+                        <Route exact path="/dashboard"><Dashboard /></Route>
+                        <Route exact path="/dashboard/books"><BooksTable /></Route>
+                        <Route exact path="/dashboard/settings"><Settings /></Route>
                     </Switch>
                 </div>
             </div>

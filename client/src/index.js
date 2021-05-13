@@ -11,9 +11,7 @@ import thunk from 'redux-thunk';
 
 // CSS
 import './assets/css/index.scss';
-
 import reducers from './reducers';
-
 import App from './App';
 
 const store = createStore(reducers, compose(applyMiddleware(thunk)))

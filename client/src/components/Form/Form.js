@@ -45,7 +45,7 @@ const Form = ({ currentId, setCurrentId, Toggle}) => {
                 value={bookData.title}
                 onChange={(e) => setBookData({ ...bookData, title: e.target.value })}
                 required
-                maxlength="50"
+                maxLength="50"
             />
             <input
                 type="text"
@@ -55,7 +55,7 @@ const Form = ({ currentId, setCurrentId, Toggle}) => {
                 value={bookData.author}
                 onChange={(e) => setBookData({ ...bookData, author: e.target.value })}
                 required
-                maxlength="50"
+                maxLength="50"
             />
             <input
                 type="text"

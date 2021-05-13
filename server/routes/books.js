@@ -5,7 +5,7 @@ import login from '../middleware/login.js';
 
 const router = express.Router();
 
-router.get('/', login, getBooks);
+router.get('/', getBooks);
 router.post('/', login, addNew);
 router.patch('/:id', login, updateBook);
 router.delete('/:id', login, deleteBook);

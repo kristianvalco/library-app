@@ -15,10 +15,10 @@ app.use(cors());
 
 app.use('/books', booksRoutes);
 app.use('/user', userRoutes);
-
 app.use('/', (req, res) => {
     res.send('Hello to library-app API');
 });
+
 
 const PORT = process.env.PORT || 5000;
 
