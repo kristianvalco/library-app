@@ -10,9 +10,9 @@ import Book from '../Books/Book/Book';
 // css
 import './Books.scss'
 
-const Books = ({ currentId, setCurrentId, Toggle }) => {
+const Books = ({ currentId, setCurrentId, Toggle, userRole }) => {
     const books = useSelector((state) => state.books);
-
+    
     const dispatch = useDispatch();
     
     useEffect(() => {
@@ -28,7 +28,9 @@ const Books = ({ currentId, setCurrentId, Toggle }) => {
                     <th scope="col">Autor</th>
                     <th scope="col">Vydanie</th>
                     <th scope="col">Počet</th>
-                    <th scope="col"></th>
+                    {(userRole === 'admin') && (
+                        <th scope="col"></th>
+                    )}
                 </tr>
             </thead>
             {
@@ -37,7 +39,7 @@ const Books = ({ currentId, setCurrentId, Toggle }) => {
                         {books.map((book, i) => (
                             <tr key={book._id}>
                                 <th scope="row" className="idNumber">{i + 1}</th>
-                                <Book book={book} setCurrentId={setCurrentId} Toggle={Toggle} />
+                                <Book book={book} setCurrentId={setCurrentId} Toggle={Toggle} userRole={userRole} />
                             </tr>
                         ))}
                     </tbody>

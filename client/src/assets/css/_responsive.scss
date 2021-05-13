@@ -20,14 +20,18 @@
         }
     }
     .login {
+        margin-top: 4em !important;
         form {
             padding: 2em !important;
+        }
+        .copyright {
+            display: none;
         }
     }
 }
 
 @media (max-width: 425px) {
     .login {
-        margin-top: 2em !important;
+        margin-top: 1em !important;
     }
 }

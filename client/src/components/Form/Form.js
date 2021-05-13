@@ -8,10 +8,10 @@ import { addNew, updateBook } from '../../actions/books';
 import './Form.scss'
 
 const Form = ({ currentId, setCurrentId, Toggle}) => {
-
     const [bookData, setBookData] = useState({ title: '', author: '', year: '', count: '' });
     const book = useSelector((state) => currentId ? state.books.find((b) => b._id === currentId) : null);
     const dispatch = useDispatch();
+    const user = JSON.parse(localStorage.getItem('profile'));
 
     useEffect(() => {
         if (book) setBookData(book);
@@ -21,12 +21,20 @@ const Form = ({ currentId, setCurrentId, Toggle}) => {
         e.preventDefault();
 
         if (currentId) {
-            dispatch(updateBook(currentId, bookData));
+            dispatch(updateBook(currentId, { ...bookData, name: user?.result?.name }));
         } else {
-            dispatch(addNew(bookData));
+            dispatch(addNew({ ...bookData, name: user?.result?.name }));
         }
         clear();
         Toggle();
+    }
+
+    if (!user?.result?.name) {
+        return (
+            <div className="alert alert-danger" role="alert">
+                Pre zobrazenie tejto stránky musíte byť prihlásený.
+            </div>
+        )
     }
 
     const clear = () => {

@@ -1,6 +1,7 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { useDispatch } from 'react-redux';
-import { NavLink, useHistory } from 'react-router-dom'
+import { NavLink, useHistory, useLocation } from 'react-router-dom'
+import decode from 'jwt-decode'
 
 // CSS
 import './Navigation.scss'
@@ -11,6 +12,7 @@ const Navigation = (props) => {
     const [user, setUser] = useState(JSON.parse(localStorage.getItem('profile')));
     const dispatch = useDispatch();
     const history = useHistory();
+    const location = useLocation();
 
     const logout = () => {
         dispatch({ type: 'LOGOUT' });
@@ -19,6 +21,19 @@ const Navigation = (props) => {
         setUser(null);
     }
 
+    useEffect(() => {
+        const token = user?.token;
+        
+        if(token) {
+            const decodedToken = decode(token);
+
+            if(decodedToken.exp * 30000 < new Date().getTime()) logout();
+        }
+
+        setUser(JSON.parse(localStorage.getItem('profile')));
+    }, [location]);
+
+    const userRole = JSON.parse(localStorage.getItem('profile'))?.result?.role;
 
     return (
         <nav className="navbar navbar-expand">
@@ -35,8 +50,13 @@ const Navigation = (props) => {
                         </button>
                         <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
                             <li>
-                                <NavLink className="dropdown-item" to="/dashboard/settings">Nastavenia</NavLink>
+                                <NavLink className="dropdown-item" to="/settings">Nastavenia</NavLink>
                             </li>
+                            {(userRole === 'admin') && (    
+                                <li>
+                                    <NavLink className="dropdown-item" to="/register">Registrovať</NavLink>
+                                </li>
+                            )}
                             <li>
                                 <button className="dropdown-item" onClick={logout}>Odhlásiť sa</button>
                             </li>
@@ -46,8 +66,7 @@ const Navigation = (props) => {
                         </ul>
                     </li>
                 ) : (
-                    <li className="nav-item">
-                        <button onClick={logout}>Odhlásiť sa</button>
+                    <li className="nav-item ">
                     </li>
                 )}
             </ul>

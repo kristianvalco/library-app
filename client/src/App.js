@@ -1,18 +1,21 @@
 import React from 'react';
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import { BrowserRouter as Router, Route, Redirect } from "react-router-dom";
 
 // CSS
 import './assets/css/App.scss'
 
 // components
-import Home from "./components/Home"
-import Login from "./components/Login/Login"
+import Home from "./views/Home"
 
 function App() {
+    const user = JSON.parse(localStorage.getItem('profile'));
+    const userRole = JSON.parse(localStorage.getItem('profile'))?.result?.role;
+
     return (
         <Router>
-            <Route exact path="/" component={Login} />
-            <Route path="/dashboard" component={Home} />
+            <Route path="/">
+                <Home user={user} userRole={userRole} />
+            </Route>
         </Router>
     );
 }
