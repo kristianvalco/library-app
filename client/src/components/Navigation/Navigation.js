@@ -35,7 +35,7 @@ const Navigation = (props) => {
                         </button>
                         <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
                             <li>
-                                <NavLink className="dropdown-item" to="/settings">Nastavenia</NavLink>
+                                <NavLink className="dropdown-item" to="/dashboard/settings">Nastavenia</NavLink>
                             </li>
                             <li>
                                 <button className="dropdown-item" onClick={logout}>Odhlásiť sa</button>

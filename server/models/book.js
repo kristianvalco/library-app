@@ -3,8 +3,6 @@ import mongoose from 'mongoose';
 const bookSchema = mongoose.Schema({
     title: String,
     author: String,
-    name: String,
-    creator: String,
     year: {
         type: Number,
         default: 0
@@ -16,7 +14,9 @@ const bookSchema = mongoose.Schema({
     createdAt: {
         type: Date,
         default: new Date()
-    }
+    },
+    name: String,
+    creator: String,
 });
 
 const Book = mongoose.model('Book', bookSchema);
