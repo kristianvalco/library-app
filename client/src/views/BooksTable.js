@@ -37,7 +37,7 @@ const BooksTable = () => {
             </div>
             <div className="row">
                 <div className="col-xl-12">
-                    <div className="addform" className={`${isActive ? "addform" : "addform mb-4"}`} >
+                    <div className={`${isActive ? "addform" : "addform mb-4"}`} >
                         <div className={`${isActive ? "form" : "form active"}`}>
                             <h4 className="mb-4 site-title">{currentId ? 'Upraviť' : 'Pridať nový'} záznam</h4>
                             <Form Toggle={Toggle} currentId={currentId} setCurrentId={setCurrentId} />

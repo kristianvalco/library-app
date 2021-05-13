@@ -7,16 +7,12 @@ import './assets/css/App.scss'
 // components
 import Home from "./components/Home"
 import Login from "./components/Login/Login"
-import AuthProvider from "./Auth"
-import PrivateRoute from "./PrivateRoute"
 
 function App() {
     return (
         <Router>
-            <AuthProvider>
-                <Route exact path="/login" component={Login} />
-                <PrivateRoute path="/" component={Home} />
-            </AuthProvider>
+            <Route exact path="/" component={Login} />
+            <Route path="/dashboard" component={Home} />
         </Router>
     );
 }
